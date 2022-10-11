@@ -3,7 +3,7 @@ package entity
 type Person struct {
 	FirstName string `json:"firstname"`
 	LastName  string `json:"lastname"`
-	Age       int8   `json:"age"`
+	Age       int    `json:"age"`
 	Email     string `json:"email"`
 }
 
