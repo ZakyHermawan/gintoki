@@ -1,25 +1,39 @@
 package service
 
-import "gintoki/entity"
+import (
+	"gintoki/entity"
+	"gintoki/repository"
+)
 
 type VideoService interface {
-	Save(entity.Video) entity.Video
-	FindAll() []entity.Video
+	Save(entity.Video) error
+	Update(entity.Video) error
+	Delete(entity.Video) error
+	FindAll() ([]entity.Video, error)
 }
 
 type videoService struct {
-	videos []entity.Video
+	repository repository.VideoRepository
 }
 
-func New() VideoService {
-	return &videoService{}
+func New(repo repository.VideoRepository) VideoService {
+	return &videoService{
+		repository: repo,
+	}
 }
 
-func (service *videoService) Save(video entity.Video) entity.Video {
-	service.videos = append(service.videos, video)
-	return video
+func (service *videoService) Save(video entity.Video) error {
+	return service.repository.Save(video)
 }
 
-func (service *videoService) FindAll() []entity.Video {
-	return service.videos
+func (service *videoService) Update(video entity.Video) error {
+	return service.repository.Update(video)
+}
+
+func (service *videoService) Delete(video entity.Video) error {
+	return service.repository.Delete(video)
+}
+
+func (service *videoService) FindAll() ([]entity.Video, error) {
+	return service.repository.FindAll()
 }

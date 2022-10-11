@@ -2,12 +2,19 @@
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] POST   /login                    --> main.main.func1 (3 handlers)
-[GIN-debug] GET    /api/videos               --> main.main.func2 (4 handlers)
-[GIN-debug] POST   /api/videos               --> main.main.func3 (4 handlers)
+[GIN-debug] POST   /login                    --> main.main.func1 (4 handlers)
+[GIN-debug] GET    /api/videos               --> main.main.func2 (5 handlers)
+[GIN-debug] POST   /api/videos               --> main.main.func3 (5 handlers)
+[GIN-debug] PUT    /api/videos/:id           --> main.main.func4 (5 handlers)
+[GIN-debug] DELETE /api/videos/:id           --> main.main.func5 (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8000
-::1 - [11 Oct 22 10:57 +07] GET /api/videos  200 2.1959ms 
-::1 - [11 Oct 22 10:57 +07] POST /api/videos  200 939.1µs 
-::1 - [11 Oct 22 10:57 +07] GET /api/videos  200 1.4191ms 
+::1 - [11 Oct 22 21:12 +07] GET /  404 1.4782ms 
+::1 - [11 Oct 22 21:12 +07] GET /swagger/index.html  200 2.6509ms 
+::1 - [11 Oct 22 21:12 +07] GET /swagger/swagger-ui.css  200 4.0746ms 
+::1 - [11 Oct 22 21:12 +07] GET /swagger/swagger-ui-standalone-preset.js  200 10.8063ms 
+::1 - [11 Oct 22 21:12 +07] GET /swagger/swagger-ui-bundle.js  200 18.0319ms 
+::1 - [11 Oct 22 21:12 +07] GET /swagger/doc.json  200 4.1648ms 
+::1 - [11 Oct 22 21:12 +07] GET /swagger/doc.json  200 4.4383ms 
