@@ -11,4 +11,4 @@ build:
 test:
   stage: test
   image: golang:latest
-    - go test service/*.go
+    - go test -v ./...
